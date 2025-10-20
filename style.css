@@ -1,0 +1,332 @@
+/* --- Variables et Style de Base --- */
+:root {
+    --color-primary: #D2691E;
+    --color-secondary: #F4A460;
+    --color-dark: #3a2e2e;
+    --color-light: #fdfaf6;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    color: var(--color-primary);
+}
+
+/* --- Header et Navigation --- */
+#main-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 15px 0;
+    background: transparent;
+    transition: background-color 0.4s ease;
+}
+
+#main-header.scrolled {
+    position: fixed;
+    background-color: var(--color-dark);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo-nav {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul { list-style: none; padding: 0; margin: 0; display: flex; }
+nav ul li { margin-left: 25px; }
+nav ul li a { color: white; text-decoration: none; font-weight: bold; transition: color 0.3s; }
+nav ul li a:hover { color: var(--color-secondary); }
+
+/* --- Section Héros Vidéo (index.html) --- */
+/* 1. Le conteneur principal */
+#hero-video {
+  /* On le règle sur "relative" pour que les éléments 
+     à l'intérieur puissent se positionner par rapport à lui */
+  position: relative;
+  
+  /* On lui donne une hauteur, par ex. 100% de la hauteur de l'écran */
+  height: 100vh; 
+  
+  /* S'assure que rien ne dépasse */
+  overflow: hidden; 
+  
+  /* Met le texte en blanc pour qu'il soit lisible sur fond sombre */
+  color: white; 
+}
+
+/* 2. La vidéo en fond */
+#bg-video {
+  /* Position absolue pour la sortir du flux normal */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* C'est la clé : la vidéo couvre tout l'espace
+     sans être déformée (elle sera rognée si besoin) */
+  object-fit: cover; 
+  
+  /* On la place tout en bas de la pile */
+  z-index: 1; 
+}
+
+/* 3. L'effet assombri (l'overlay) */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+  /* C'est votre "effet assombri" : un fond noir 
+     avec 50% d'opacité. */
+  background-color: rgba(0, 0, 0, 0.5); 
+  
+  /* On le place par-dessus la vidéo */
+  z-index: 2; 
+}
+
+/* 4. Le contenu (logo, titre, etc.) */
+.hero-content {
+  /* On le centre parfaitement au milieu */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  /* On le place par-dessus l'overlay */
+  z-index: 3; 
+  
+  /* On centre le texte et l'image à l'intérieur de ce bloc */
+  text-align: center; 
+}
+
+.hero-content .logo-hero { width: 40vh; margin-bottom: 15px; }
+.hero-content h1 { font-size: 4rem; margin: 0; }
+.hero-content p { font-size: 1.5rem; color: var(--color-secondary); }
+
+/* --- Contenu principal (main) --- */
+main {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 40px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* --- Liste des Sports (index.html) --- */
+.sports-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px 10px;
+    background: var(--color-light);
+    border-radius: 8px;
+}
+
+.sport-item {
+    flex: 0 0 250px;
+    margin: 0 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    text-decoration: none;
+    color: var(--color-dark);
+    background: var(--color-secondary);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.sport-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.sport-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.sport-item span {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* --- Section Boutons CTA (index.html) --- */
+#cta-buttons {
+    text-align: center;
+    background: none;
+    box-shadow: none;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--color-primary);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+    margin: 10px;
+    border: 2px solid var(--color-primary);
+}
+
+.cta-button:hover {
+    background: #a0522d;
+    border-color: #a0522d;
+}
+
+.cta-button.secondary {
+    background: transparent;
+    color: var(--color-primary);
+}
+
+.cta-button.secondary:hover {
+    background: var(--color-primary);
+    color: white;
+}
+
+/* Le conteneur principal qui utilise Flexbox */
+.lieu-container {
+    display: flex;
+    align-items: center; /* Centre verticalement les deux blocs */
+    gap: 2rem;           /* Espace entre l'image et le texte */
+    
+    /* Optionnel : centre la section sur la page */
+    max-width: 1200px;
+    margin: 4rem auto; /* Ajoute de l'espace au-dessus/en-dessous */
+    padding: 0 1rem;   /* Empêche de coller aux bords sur mobile */
+}
+
+/* Colonne de gauche (image) */
+.lieu-image {
+    flex: 1; /* Prend 1 part de l'espace */
+    min-width: 300px; /* Largeur minimale avant de réduire */
+}
+
+.lieu-image img {
+    width: 100%;       /* L'image prend toute la largeur de sa colonne */
+    height: auto;      /* Garde les proportions */
+    border-radius: 8px; /* Optionnel : jolis coins arrondis */
+}
+
+/* Colonne de droite (texte) */
+.lieu-texte {
+    flex: 1.5; /* Prend 1.5 part, sera donc plus large que l'image */
+}
+
+/* --- Page Inscription (inscription.html) --- */
+#inscription-form form { display: flex; flex-direction: column; }
+fieldset { border: 1px solid #ccc; border-radius: 8px; margin-bottom: 20px; padding: 20px; }
+legend { padding: 0 10px; font-weight: bold; color: var(--color-primary); }
+.form-group { margin-bottom: 15px; }
+.form-group label { display: block; margin-bottom: 5px; font-weight: 600; }
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.form-group-radio { margin-bottom: 10px; background: var(--color-light); padding: 15px; border-radius: 5px; }
+.form-group-radio label { margin-left: 10px; }
+#inscription-form button[type="submit"] { align-self: flex-start; border: none; }
+
+/* --- Page Sport (sport.html) --- */
+#sport-rules {
+    line-height: 1.8;
+    background: var(--color-light);
+    padding: 20px;
+    padding-left: 40px;
+    border-radius: 8px;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--color-dark);
+    color: #aaa;
+    margin-top: 40px;
+}
+
+
+
+/* -- Règlement --*/
+
+/* --- Style pour la page Règlement --- */
+.container-reglement {
+    max-width: 900px;  /* Limite la largeur pour faciliter la lecture */
+    margin: 2rem auto; /* Centre le bloc sur la page */
+    padding: 1rem;
+    line-height: 1.6;  /* Augmente l'espace entre les lignes */
+}
+
+.container-reglement h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333; /* Ou la couleur de vos titres */
+}
+
+.container-reglement h2 {
+    margin-top: 2.5rem;
+    border-bottom: 2px solid #eee; /* Ligne de séparation */
+    padding-bottom: 0.5rem;
+}
+
+.container-reglement h3 {
+    margin-top: 2rem;
+    color: #555;
+}
+
+.container-reglement address {
+    font-style: normal;
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-left: 3px solid #ccc;
+    margin: 1rem 0;
+}
+
+.container-reglement ul {
+    margin-left: 2rem;
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription - TED 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="main-header" class="scrolled">
+        <nav>
+            <a href="index.html" class="logo-nav">TED 2026</a>
+            <ul>
+                <li><a href="index.html#sports">Sports</a></li>
+                <li><a href="index.html#lieu">Le Lieu</a></li>
+                <li><a href="inscription.html">S'inscrire</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main style="padding-top: 100px;">
+        <section id="inscription-form">
+            <h2>Rejoignez l'aventure</h2>
+            <p>Remplissez le formulaire pour réserver votre place.</p>
+
+            <form action="#" method="post">
+                
+                <fieldset>
+                    <legend>Informations Personnelles</legend>
+                    <div class="form-group">
+                        <label for="nom">Nom complet :</label>
+                        <input type="text" id="nom" name="nom" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Adresse Email :</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="tel">Téléphone :</label>
+                        <input type="tel" id="tel" name="tel">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Choix du Forfait</legend>
+                    <div class="form-group-radio">
+                        <input type="radio" id="forfait-explorateur" name="forfait" value="explorateur" required>
+                        <label for="forfait-explorateur">
+                            <strong>Forfait Sportif (150€)</strong> - Accès 1 sport et pétanque ou sandboard + Campement + Repas
+                        </label>
+                    </div>
+                    <div class="form-group-radio">
+                        <input type="radio" id="forfait-explorateur" name="forfait" value="explorateur" required>
+                        <label for="forfait-explorateur">
+                            <strong>Forfait Sportif des Sables (200€)</strong> - Forfait sportif + Pack TED 2026
+                        </label>
+                    </div>
+                    <div class="form-group-radio">
+                        <input type="radio" id="forfait-conquerant" name="forfait" value="conquerant">
+                        <label for="forfait-conquerant">
+                            <strong>Forfait Staffeur (130€)</strong> - Staf obligatoire + Campement + Repas
+                        </label>
+                    </div>
+                    <div class="form-group-radio">
+                        <input type="radio" id="forfait-legende" name="forfait" value="legende">
+                        <label for="forfait-legende">
+                            <strong>Forfait Staffeur du Désert (160€)</strong> - Fofrait Staffeur + Pack TED 2026
+                        </label>
+                    </div>
+                </fieldset>
+                
+                <button type="submit" class="cta-button">Confirmer l'inscription</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 TED. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
